@@ -6,7 +6,7 @@ const calculate = () => {
     let sum = 0;
     let str = "";
     let i = 0;
-    while( i < mainStr.length && mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58)
+    while( i < mainStr.length && ((mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58) || mainStr.charAt(i) === '.'))
     {
         str+= mainStr.charAt(i);
         i++;
@@ -14,52 +14,52 @@ const calculate = () => {
     if(mainStr.charAt(i) === "+")
     {
         i++;
-        sum = Number.parseInt(str);
+        sum = Number.parseFloat(str);
         str = "";
-        while( i < mainStr.length && mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58)
+        while( i < mainStr.length && ((mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58) || mainStr.charAt(i) === '.'))
         {
             str+= mainStr.charAt(i);
             i++;
         }
 
-        return sum + Number.parseInt(str);
+        return sum + Number.parseFloat(str);
     }
     else if(mainStr.charAt(i) === "X")
     {
         i++;
-        sum = Number.parseInt(str);
+        sum = Number.parseFloat(str);
         str = "";
-        while( i < mainStr.length && mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58)
+        while( i < mainStr.length && ((mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58) || mainStr.charAt(i) === '.'))
         {
             str+= mainStr.charAt(i);
             i++;
         }
-        return sum * Number.parseInt(str);
+        return sum * Number.parseFloat(str);
     }
     else if(mainStr.charAt(i) === "-")
     {
         i++;
-        sum = Number.parseInt(str);
+        sum = Number.parseFloat(str);
         str = "";
-        while( i < mainStr.length && mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58)
+        while( i < mainStr.length && ((mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58) || mainStr.charAt(i) === '.'))
         {
             str+= mainStr.charAt(i);
             i++;
         }
-        return sum-Number.parseInt(str);
+        return sum-Number.parseFloat(str);
     }
     else if(mainStr.charAt(i) === "÷")
     {
         i++;
-        sum = Number.parseInt(str);
+        sum = Number.parseFloat(str);
         str = "";
-        while( i < mainStr.length && mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58)
+        while( i < mainStr.length && ((mainStr.charCodeAt(i) > 47 && mainStr.charCodeAt(i) < 58) || mainStr.charAt(i) === '.'))
         {
             str+= mainStr.charAt(i);
             i++;
         }
         
-        return sum / Number.parseInt(str);
+        return sum / Number.parseFloat(str);
     }
 
 };
@@ -88,4 +88,3 @@ boxes.forEach(box => {
       }
     });
   });
-
